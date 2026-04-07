@@ -16,6 +16,7 @@ from index_math.rebalancing import apply_rebalance
 from index_math.construction import calculate_daily_index
 from backtesting.performance import compare_vs_benchmark
 from backtesting.attribution import calculate_turnover, calculate_sector_drift
+from backtesting.visualizer import plot_performance
 from reports.generator import generate_markdown_report
 
 logger = setup_logging()
@@ -26,6 +27,7 @@ def main():
     parser.add_argument('--ingest', action='store_true', help='Download universe and pricing data')
     parser.add_argument('--run-engine', action='store_true', help='Run semi-annual rebalances and index calculations')
     parser.add_argument('--backtest', action='store_true', help='Generate attribution and performance reports')
+    parser.add_argument('--visualize', action='store_true', help='Generate performance chart plot')
     parser.add_argument('--full-run', action='store_true', help='Execute all phases sequentially')
     
     args = parser.parse_args()
@@ -60,12 +62,18 @@ def main():
             
         calculate_daily_index(pd.to_datetime(START_DATE).date(), pd.to_datetime(END_DATE).date())
         
-    if args.backtest or args.full_run:
+    if args.backtest or args.full_run or args.visualize:
         logger.info("Executing performance and risk attribution backtest...")
         perf_df = compare_vs_benchmark(pd.to_datetime(START_DATE).date(), pd.to_datetime(END_DATE).date(), "SPY")
-        turnover_df = calculate_turnover()
-        sector_df = calculate_sector_drift()
-        generate_markdown_report(perf_df, turnover_df, sector_df, "indexforge_report.md")
+        
+        if args.backtest or args.full_run:
+            turnover_df = calculate_turnover()
+            sector_df = calculate_sector_drift()
+            generate_markdown_report(perf_df, turnover_df, sector_df, "indexforge_report.md")
+            
+        if args.visualize or args.full_run:
+            plot_performance(perf_df)
+            
         logger.info("Engineering cycle complete. Summary report generated.")
 
 if __name__ == "__main__":
