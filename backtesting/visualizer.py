@@ -20,6 +20,11 @@ def plot_performance(perf_df: pd.DataFrame, output_path: str = "assets/index_per
         logger.warning("Performance dataframe is empty. No chart generated.")
         return
         
+    # Ensure output directory exists
+    output_dir = os.path.dirname(output_path)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        
     logger.info(f"Generating performance visualization at {output_path}...")
     
     # Set premium aesthetics

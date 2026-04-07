@@ -1,398 +1,102 @@
-2026-04-07 19:34:48,812 - db.init_db - INFO - Initializing database schema...
-2026-04-07 19:34:48,815 - db.init_db - INFO - Database tables verified.
-2026-04-07 19:34:48,815 - IndexForge - INFO - Starting automated data ingestion...
-2026-04-07 19:34:48,815 - data_ingestion.db_loader - INFO - Clearing existing database records for fresh ingestion...
-2026-04-07 19:34:48,838 - data_ingestion.yfinance_client - INFO - Preparing metadata for 50 constituents...
-2026-04-07 19:34:48,863 - data_ingestion.db_loader - INFO - Loading 50 equities to database...
-2026-04-07 19:34:48,867 - data_ingestion.db_loader - INFO - Equities loaded.
-2026-04-07 19:34:48,867 - data_ingestion.yfinance_client - INFO - Downloading historical data for 50 symbols...
-2026-04-07 19:34:49,931 - yfinance - ERROR - Failed to get ticker 'CVX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,939 - yfinance - ERROR - Failed to get ticker 'CAT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,943 - yfinance - ERROR - Failed to get ticker 'META' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,950 - yfinance - ERROR - Failed to get ticker 'CRM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,955 - yfinance - ERROR - Failed to get ticker 'V' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,966 - yfinance - ERROR - Failed to get ticker 'BRK-B' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:49,973 - yfinance - ERROR - Failed to get ticker 'AMGN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,406 - yfinance - ERROR - Failed to get ticker 'NKE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,530 - yfinance - ERROR - Failed to get ticker 'COST' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,534 - yfinance - ERROR - Failed to get ticker 'WFC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,560 - yfinance - ERROR - Failed to get ticker 'NEE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,572 - yfinance - ERROR - Failed to get ticker 'PEP' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,574 - yfinance - ERROR - Failed to get ticker 'HD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,576 - yfinance - ERROR - Failed to get ticker 'DIS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,578 - yfinance - ERROR - Failed to get ticker 'GOOGL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:50,995 - yfinance - ERROR - Failed to get ticker 'ABT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,020 - yfinance - ERROR - Failed to get ticker 'BMY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,046 - yfinance - ERROR - Failed to get ticker 'UNH' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,469 - yfinance - ERROR - Failed to get ticker 'MRK' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,474 - yfinance - ERROR - Failed to get ticker 'LOW' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,498 - yfinance - ERROR - Failed to get ticker 'MCD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,521 - yfinance - ERROR - Failed to get ticker 'TMO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:51,541 - yfinance - ERROR - Failed to get ticker 'MS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,000 - yfinance - ERROR - Failed to get ticker 'INTC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,005 - yfinance - ERROR - Failed to get ticker 'DHR' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,006 - yfinance - ERROR - Failed to get ticker 'XOM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,029 - yfinance - ERROR - Failed to get ticker 'MSFT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,097 - yfinance - ERROR - Failed to get ticker 'JPM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,491 - yfinance - ERROR - Failed to get ticker 'CSCO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,515 - yfinance - ERROR - Failed to get ticker 'TSLA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:52,523 - yfinance - ERROR - Failed to get ticker 'MA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,019 - yfinance - ERROR - Failed to get ticker 'BAC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,045 - yfinance - ERROR - Failed to get ticker 'JNJ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,046 - yfinance - ERROR - Failed to get ticker 'NVDA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,063 - yfinance - ERROR - Failed to get ticker 'PFE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,069 - yfinance - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,512 - yfinance - ERROR - Failed to get ticker 'UPS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,544 - yfinance - ERROR - Failed to get ticker 'PG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,547 - yfinance - ERROR - Failed to get ticker 'KO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:53,744 - yfinance - ERROR - Failed to get ticker 'ADBE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,040 - yfinance - ERROR - Failed to get ticker 'PM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,041 - yfinance - ERROR - Failed to get ticker 'RTX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,047 - yfinance - ERROR - Failed to get ticker 'VZ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,074 - yfinance - ERROR - Failed to get ticker 'HON' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,364 - yfinance - ERROR - Failed to get ticker 'AVGO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,547 - yfinance - ERROR - Failed to get ticker 'ABBV' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,566 - yfinance - ERROR - Failed to get ticker 'TXN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,569 - yfinance - ERROR - Failed to get ticker 'AMZN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,585 - yfinance - ERROR - Failed to get ticker 'LIN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,600 - yfinance - ERROR - Failed to get ticker 'GOOG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:34:54,601 - yfinance - ERROR - 
+2026-04-07 19:51:15,903 - db.init_db - INFO - Initializing database schema...
+2026-04-07 19:51:15,912 - db.init_db - INFO - Database tables verified.
+2026-04-07 19:51:15,912 - IndexForge - INFO - Starting automated data ingestion...
+2026-04-07 19:51:15,912 - data_ingestion.db_loader - INFO - Clearing existing database records for fresh ingestion...
+2026-04-07 19:51:15,913 - data_ingestion.yfinance_client - INFO - Preparing metadata for 50 constituents...
+2026-04-07 19:51:15,930 - data_ingestion.db_loader - INFO - Loading 50 equities to database...
+2026-04-07 19:51:15,934 - data_ingestion.db_loader - INFO - Equities loaded.
+2026-04-07 19:51:15,934 - data_ingestion.yfinance_client - INFO - Downloading historical data for 50 symbols...
+2026-04-07 19:51:16,920 - yfinance - ERROR - Failed to get ticker 'PM' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,929 - yfinance - ERROR - Failed to get ticker 'WFC' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,937 - yfinance - ERROR - Failed to get ticker 'TSLA' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,942 - yfinance - ERROR - Failed to get ticker 'TMO' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,945 - yfinance - ERROR - Failed to get ticker 'XOM' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,950 - yfinance - ERROR - Failed to get ticker 'CVX' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,973 - yfinance - ERROR - Failed to get ticker 'LIN' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:16,974 - yfinance - ERROR - Failed to get ticker 'RTX' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,598 - yfinance - ERROR - Failed to get ticker 'NKE' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,603 - yfinance - ERROR - Failed to get ticker 'DHR' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,614 - yfinance - ERROR - Failed to get ticker 'NEE' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,616 - yfinance - ERROR - Failed to get ticker 'PFE' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,627 - yfinance - ERROR - Failed to get ticker 'ADBE' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,659 - yfinance - ERROR - Failed to get ticker 'ABBV' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,679 - yfinance - ERROR - Failed to get ticker 'CSCO' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:17,707 - yfinance - ERROR - Failed to get ticker 'CRM' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,178 - yfinance - ERROR - Failed to get ticker 'TXN' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,180 - yfinance - ERROR - Failed to get ticker 'DIS' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,183 - yfinance - ERROR - Failed to get ticker 'PEP' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,194 - yfinance - ERROR - Failed to get ticker 'MCD' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,205 - yfinance - ERROR - Failed to get ticker 'BMY' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,217 - yfinance - ERROR - Failed to get ticker 'GOOGL' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,221 - yfinance - ERROR - Failed to get ticker 'HD' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,230 - yfinance - ERROR - Failed to get ticker 'AMGN' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,812 - yfinance - ERROR - Failed to get ticker 'BRK-B' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,827 - yfinance - ERROR - Failed to get ticker 'VZ' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,830 - yfinance - ERROR - Failed to get ticker 'JPM' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,843 - yfinance - ERROR - Failed to get ticker 'MS' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,847 - yfinance - ERROR - Failed to get ticker 'UPS' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,863 - yfinance - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,867 - yfinance - ERROR - Failed to get ticker 'ABT' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:18,876 - yfinance - ERROR - Failed to get ticker 'NVDA' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,415 - yfinance - ERROR - Failed to get ticker 'JNJ' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,426 - yfinance - ERROR - Failed to get ticker 'GOOG' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,430 - yfinance - ERROR - Failed to get ticker 'MSFT' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,445 - yfinance - ERROR - Failed to get ticker 'MRK' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,450 - yfinance - ERROR - Failed to get ticker 'MA' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,452 - yfinance - ERROR - Failed to get ticker 'LOW' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,467 - yfinance - ERROR - Failed to get ticker 'CAT' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,472 - yfinance - ERROR - Failed to get ticker 'PG' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:19,999 - yfinance - ERROR - Failed to get ticker 'BAC' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,002 - yfinance - ERROR - Failed to get ticker 'AMZN' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,011 - yfinance - ERROR - Failed to get ticker 'UNH' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,014 - yfinance - ERROR - Failed to get ticker 'HON' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,024 - yfinance - ERROR - Failed to get ticker 'V' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,025 - yfinance - ERROR - Failed to get ticker 'KO' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,213 - yfinance - ERROR - Failed to get ticker 'INTC' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,252 - yfinance - ERROR - Failed to get ticker 'META' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,627 - yfinance - ERROR - Failed to get ticker 'AVGO' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,639 - yfinance - ERROR - Failed to get ticker 'COST' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:20,652 - yfinance - ERROR - 
 50 Failed downloads:
-2026-04-07 19:34:54,601 - yfinance - ERROR - ['CVX', 'CAT', 'META', 'CRM', 'V', 'BRK-B', 'AMGN', 'NKE', 'COST', 'WFC', 'NEE', 'PEP', 'HD', 'DIS', 'GOOGL', 'ABT', 'BMY', 'UNH', 'MRK', 'LOW', 'MCD', 'TMO', 'MS', 'INTC', 'DHR', 'XOM', 'MSFT', 'JPM', 'CSCO', 'TSLA', 'MA', 'BAC', 'JNJ', 'NVDA', 'PFE', 'AAPL', 'UPS', 'PG', 'KO', 'ADBE', 'PM', 'RTX', 'VZ', 'HON', 'AVGO', 'ABBV', 'TXN', 'AMZN', 'LIN', 'GOOG']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:34:54,614 - data_ingestion.yfinance_client - WARNING - No data retrieved from API. Switching to synthetic market generation...
-2026-04-07 19:34:54,824 - data_ingestion.db_loader - INFO - Loading 65250 daily price records to database...
-2026-04-07 19:34:55,218 - data_ingestion.db_loader - INFO - Prices loaded.
-2026-04-07 19:34:55,219 - IndexForge - INFO - Targeting semi-annual rebalancing windows (MSCI Schedule)...
-2026-04-07 19:34:55,226 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-05-31...
-2026-04-07 19:34:55,232 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,235 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-11-30...
-2026-04-07 19:34:55,235 - index_math.rebalancing - WARNING - No price data found for 2019-11-30. Rebalance cannot proceed.
-2026-04-07 19:34:55,235 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-05-31...
-2026-04-07 19:34:55,236 - index_math.rebalancing - WARNING - No price data found for 2020-05-31. Rebalance cannot proceed.
-2026-04-07 19:34:55,236 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-11-30...
-2026-04-07 19:34:55,239 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,241 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-05-31...
-2026-04-07 19:34:55,243 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,245 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-11-30...
-2026-04-07 19:34:55,248 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,250 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-05-31...
-2026-04-07 19:34:55,252 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,254 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-11-30...
-2026-04-07 19:34:55,257 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,258 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-05-31...
-2026-04-07 19:34:55,261 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,263 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-11-30...
-2026-04-07 19:34:55,265 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:34:55,268 - index_math.construction - INFO - Starting daily index calculation for period: 2019-01-01 -> 2024-01-01
-2026-04-07 19:35:29,214 - db.init_db - INFO - Initializing database schema...
-2026-04-07 19:35:29,217 - db.init_db - INFO - Database tables verified.
-2026-04-07 19:35:29,217 - IndexForge - INFO - Starting automated data ingestion...
-2026-04-07 19:35:29,217 - data_ingestion.db_loader - INFO - Clearing existing database records for fresh ingestion...
-2026-04-07 19:35:29,250 - data_ingestion.yfinance_client - INFO - Preparing metadata for 50 constituents...
-2026-04-07 19:35:29,268 - data_ingestion.db_loader - INFO - Loading 50 equities to database...
-2026-04-07 19:35:29,272 - data_ingestion.db_loader - INFO - Equities loaded.
-2026-04-07 19:35:29,272 - data_ingestion.yfinance_client - INFO - Downloading historical data for 50 symbols...
-2026-04-07 19:35:30,519 - yfinance - ERROR - Failed to get ticker 'HD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,528 - yfinance - ERROR - Failed to get ticker 'HON' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,536 - yfinance - ERROR - Failed to get ticker 'BRK-B' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,547 - yfinance - ERROR - Failed to get ticker 'CRM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,548 - yfinance - ERROR - Failed to get ticker 'PG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,565 - yfinance - ERROR - Failed to get ticker 'WFC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,568 - yfinance - ERROR - Failed to get ticker 'MCD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:30,570 - yfinance - ERROR - Failed to get ticker 'MSFT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,462 - yfinance - ERROR - Failed to get ticker 'LOW' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,471 - yfinance - ERROR - Failed to get ticker 'JPM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,479 - yfinance - ERROR - Failed to get ticker 'COST' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,482 - yfinance - ERROR - Failed to get ticker 'VZ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,494 - yfinance - ERROR - Failed to get ticker 'AVGO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,497 - yfinance - ERROR - Failed to get ticker 'AMGN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,526 - yfinance - ERROR - Failed to get ticker 'MS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:31,558 - yfinance - ERROR - Failed to get ticker 'PEP' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,080 - yfinance - ERROR - Failed to get ticker 'UNH' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,100 - yfinance - ERROR - Failed to get ticker 'V' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,101 - yfinance - ERROR - Failed to get ticker 'JNJ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,116 - yfinance - ERROR - Failed to get ticker 'BAC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,122 - yfinance - ERROR - Failed to get ticker 'TXN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,134 - yfinance - ERROR - Failed to get ticker 'GOOGL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,138 - yfinance - ERROR - Failed to get ticker 'GOOG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,146 - yfinance - ERROR - Failed to get ticker 'MA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,939 - yfinance - ERROR - Failed to get ticker 'NVDA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,945 - yfinance - ERROR - Failed to get ticker 'BMY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,949 - yfinance - ERROR - Failed to get ticker 'RTX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,952 - yfinance - ERROR - Failed to get ticker 'MRK' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,966 - yfinance - ERROR - Failed to get ticker 'ABBV' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,976 - yfinance - ERROR - Failed to get ticker 'DIS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,988 - yfinance - ERROR - Failed to get ticker 'PM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:32,994 - yfinance - ERROR - Failed to get ticker 'PFE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,577 - yfinance - ERROR - Failed to get ticker 'KO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,592 - yfinance - ERROR - Failed to get ticker 'CVX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,600 - yfinance - ERROR - Failed to get ticker 'TSLA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,608 - yfinance - ERROR - Failed to get ticker 'CSCO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,613 - yfinance - ERROR - Failed to get ticker 'XOM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,623 - yfinance - ERROR - Failed to get ticker 'LIN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,631 - yfinance - ERROR - Failed to get ticker 'CAT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:33,633 - yfinance - ERROR - Failed to get ticker 'ABT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,270 - yfinance - ERROR - Failed to get ticker 'NEE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,272 - yfinance - ERROR - Failed to get ticker 'DHR' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,306 - yfinance - ERROR - Failed to get ticker 'INTC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,338 - yfinance - ERROR - Failed to get ticker 'TMO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,352 - yfinance - ERROR - Failed to get ticker 'AMZN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,359 - yfinance - ERROR - Failed to get ticker 'UPS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,382 - yfinance - ERROR - Failed to get ticker 'NKE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:34,395 - yfinance - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:35,027 - yfinance - ERROR - Failed to get ticker 'ADBE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:35,061 - yfinance - ERROR - Failed to get ticker 'META' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:35,068 - yfinance - ERROR - 
-50 Failed downloads:
-2026-04-07 19:35:35,068 - yfinance - ERROR - ['HD', 'HON', 'BRK-B', 'CRM', 'PG', 'WFC', 'MCD', 'MSFT', 'LOW', 'JPM', 'COST', 'VZ', 'AVGO', 'AMGN', 'MS', 'PEP', 'UNH', 'V', 'JNJ', 'BAC', 'TXN', 'GOOGL', 'GOOG', 'MA', 'NVDA', 'BMY', 'RTX', 'MRK', 'ABBV', 'DIS', 'PM', 'PFE', 'KO', 'CVX', 'TSLA', 'CSCO', 'XOM', 'LIN', 'CAT', 'ABT', 'NEE', 'DHR', 'INTC', 'TMO', 'AMZN', 'UPS', 'NKE', 'AAPL', 'ADBE', 'META']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:35:35,083 - data_ingestion.yfinance_client - WARNING - No data retrieved from API. Switching to synthetic market generation...
-2026-04-07 19:35:35,290 - data_ingestion.db_loader - INFO - Loading 65250 daily price records to database...
-2026-04-07 19:35:35,673 - data_ingestion.db_loader - INFO - Prices loaded.
-2026-04-07 19:35:35,674 - IndexForge - INFO - Targeting semi-annual rebalancing windows (MSCI Schedule)...
-2026-04-07 19:35:35,682 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-05-31...
-2026-04-07 19:35:35,687 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,689 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-11-30...
-2026-04-07 19:35:35,689 - index_math.rebalancing - WARNING - No price data found for 2019-11-30. Rebalance cannot proceed.
-2026-04-07 19:35:35,690 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-05-31...
-2026-04-07 19:35:35,690 - index_math.rebalancing - WARNING - No price data found for 2020-05-31. Rebalance cannot proceed.
-2026-04-07 19:35:35,690 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-11-30...
-2026-04-07 19:35:35,693 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,695 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-05-31...
-2026-04-07 19:35:35,697 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,699 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-11-30...
-2026-04-07 19:35:35,702 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,704 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-05-31...
-2026-04-07 19:35:35,706 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,708 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-11-30...
-2026-04-07 19:35:35,711 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,713 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-05-31...
-2026-04-07 19:35:35,715 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,717 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-11-30...
-2026-04-07 19:35:35,720 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:35:35,722 - index_math.construction - INFO - Starting daily index calculation for period: 2019-01-01 -> 2024-01-01
-2026-04-07 19:35:37,454 - index_math.construction - INFO - Daily calculation complete. 1197 index points recorded.
-2026-04-07 19:35:37,455 - IndexForge - INFO - Executing performance and risk attribution backtest...
-2026-04-07 19:35:37,455 - backtesting.performance - INFO - Fetching benchmark data for SPY...
-2026-04-07 19:35:38,148 - yfinance - ERROR - Failed to get ticker 'SPY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:35:38,155 - yfinance - ERROR - 
+2026-04-07 19:51:20,652 - yfinance - ERROR - ['PM', 'WFC', 'TSLA', 'XOM', 'TMO', 'CVX', 'LIN', 'RTX', 'NKE', 'DHR', 'NEE', 'PFE', 'ADBE', 'ABBV', 'CSCO', 'CRM', 'TXN', 'DIS', 'PEP', 'MCD', 'BMY', 'GOOGL', 'HD', 'AMGN', 'BRK-B', 'VZ', 'JPM', 'MS', 'UPS', 'AAPL', 'ABT', 'NVDA', 'JNJ', 'GOOG', 'MSFT', 'MRK', 'MA', 'LOW', 'CAT', 'PG', 'BAC', 'AMZN', 'UNH', 'HON', 'V', 'KO', 'INTC', 'META', 'AVGO', 'COST']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2026-04-07 19:51:20,660 - data_ingestion.yfinance_client - WARNING - No data retrieved from API. Switching to synthetic market generation...
+2026-04-07 19:51:20,847 - data_ingestion.db_loader - INFO - Loading 65250 daily price records to database...
+2026-04-07 19:51:21,248 - data_ingestion.db_loader - INFO - Prices loaded.
+2026-04-07 19:51:21,249 - IndexForge - INFO - Targeting semi-annual rebalancing windows (MSCI Schedule)...
+2026-04-07 19:51:21,253 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-05-31...
+2026-04-07 19:51:21,258 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,260 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-11-30...
+2026-04-07 19:51:21,261 - index_math.rebalancing - WARNING - No price data found for 2019-11-30. Rebalance cannot proceed.
+2026-04-07 19:51:21,261 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-05-31...
+2026-04-07 19:51:21,262 - index_math.rebalancing - WARNING - No price data found for 2020-05-31. Rebalance cannot proceed.
+2026-04-07 19:51:21,262 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-11-30...
+2026-04-07 19:51:21,265 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,267 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-05-31...
+2026-04-07 19:51:21,269 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,272 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-11-30...
+2026-04-07 19:51:21,275 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,277 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-05-31...
+2026-04-07 19:51:21,280 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,282 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-11-30...
+2026-04-07 19:51:21,284 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,286 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-05-31...
+2026-04-07 19:51:21,290 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,292 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-11-30...
+2026-04-07 19:51:21,294 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
+2026-04-07 19:51:21,297 - index_math.construction - INFO - Starting daily index calculation for period: 2019-01-01 -> 2024-01-01
+2026-04-07 19:51:23,011 - index_math.construction - INFO - Daily calculation complete. 1197 index points recorded.
+2026-04-07 19:51:23,011 - IndexForge - INFO - Executing performance and risk attribution backtest...
+2026-04-07 19:51:23,012 - backtesting.performance - INFO - Fetching benchmark data for SPY...
+2026-04-07 19:51:23,746 - yfinance - ERROR - Failed to get ticker 'SPY' reason: Expecting value: line 1 column 1 (char 0)
+2026-04-07 19:51:23,753 - yfinance - ERROR - 
 1 Failed download:
-2026-04-07 19:35:38,155 - yfinance - ERROR - ['SPY']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:35:38,155 - backtesting.performance - WARNING - Could not fetch benchmark data. Generating synthetic SPY benchmark...
-2026-04-07 19:35:38,182 - backtesting.attribution - INFO - Calculating constituent turnover attribution...
-2026-04-07 19:35:38,199 - reports.generator - INFO - Generating executive summary report at indexforge_report.md...
-2026-04-07 19:35:38,204 - reports.generator - INFO - Report generation successful.
-2026-04-07 19:35:38,205 - IndexForge - INFO - Engineering cycle complete. Summary report generated.
-2026-04-07 19:36:32,567 - db.init_db - INFO - Initializing database schema...
-2026-04-07 19:36:32,570 - db.init_db - INFO - Database tables verified.
-2026-04-07 19:36:32,570 - IndexForge - INFO - Starting automated data ingestion...
-2026-04-07 19:36:32,570 - data_ingestion.db_loader - INFO - Clearing existing database records for fresh ingestion...
-2026-04-07 19:36:32,612 - data_ingestion.yfinance_client - INFO - Preparing metadata for 50 constituents...
-2026-04-07 19:36:32,635 - data_ingestion.db_loader - INFO - Loading 50 equities to database...
-2026-04-07 19:36:32,639 - data_ingestion.db_loader - INFO - Equities loaded.
-2026-04-07 19:36:32,639 - data_ingestion.yfinance_client - INFO - Downloading historical data for 50 symbols...
-2026-04-07 19:36:34,193 - yfinance - ERROR - Failed to get ticker 'TXN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:34,201 - yfinance - ERROR - Failed to get ticker 'LIN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:34,598 - yfinance - ERROR - Failed to get ticker 'XOM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:34,703 - yfinance - ERROR - Failed to get ticker 'JPM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:34,709 - yfinance - ERROR - Failed to get ticker 'GOOGL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,142 - yfinance - ERROR - Failed to get ticker 'JNJ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,151 - yfinance - ERROR - Failed to get ticker 'BMY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,787 - yfinance - ERROR - Failed to get ticker 'ADBE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,792 - yfinance - ERROR - Failed to get ticker 'MRK' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,806 - yfinance - ERROR - Failed to get ticker 'V' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:35,897 - yfinance - ERROR - Failed to get ticker 'TSLA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:36,461 - yfinance - ERROR - Failed to get ticker 'NVDA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:36,474 - yfinance - ERROR - Failed to get ticker 'RTX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:36,481 - yfinance - ERROR - Failed to get ticker 'CSCO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:36,488 - yfinance - ERROR - Failed to get ticker 'DHR' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:37,086 - yfinance - ERROR - Failed to get ticker 'ABBV' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:37,643 - yfinance - ERROR - Failed to get ticker 'INTC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:37,651 - yfinance - ERROR - Failed to get ticker 'CVX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:37,677 - yfinance - ERROR - Failed to get ticker 'VZ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:37,684 - yfinance - ERROR - Failed to get ticker 'PEP' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:38,121 - yfinance - ERROR - Failed to get ticker 'PG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:38,261 - yfinance - ERROR - Failed to get ticker 'WFC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:38,532 - yfinance - ERROR - Failed to get ticker 'AMGN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:38,568 - yfinance - ERROR - Failed to get ticker 'MS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:38,587 - yfinance - ERROR - Failed to get ticker 'AVGO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:39,225 - yfinance - ERROR - Failed to get ticker 'MA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:39,512 - yfinance - ERROR - Failed to get ticker 'HON' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:39,907 - yfinance - ERROR - Failed to get ticker 'BAC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:40,304 - yfinance - ERROR - Failed to get ticker 'MCD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:40,319 - yfinance - ERROR - Failed to get ticker 'NKE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:40,919 - yfinance - ERROR - Failed to get ticker 'CRM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:40,922 - yfinance - ERROR - Failed to get ticker 'ABT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:41,286 - yfinance - ERROR - Failed to get ticker 'PFE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:41,779 - yfinance - ERROR - Failed to get ticker 'TMO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:41,843 - yfinance - ERROR - Failed to get ticker 'AAPL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:41,879 - yfinance - ERROR - Failed to get ticker 'HD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:41,897 - yfinance - ERROR - Failed to get ticker 'MSFT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,336 - yfinance - ERROR - Failed to get ticker 'UNH' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,366 - yfinance - ERROR - Failed to get ticker 'UPS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,368 - yfinance - ERROR - Failed to get ticker 'COST' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,875 - yfinance - ERROR - Failed to get ticker 'NEE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,881 - yfinance - ERROR - Failed to get ticker 'KO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:42,993 - yfinance - ERROR - Failed to get ticker 'META' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:43,355 - yfinance - ERROR - Failed to get ticker 'DIS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:43,361 - yfinance - ERROR - Failed to get ticker 'LOW' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:43,996 - yfinance - ERROR - Failed to get ticker 'PM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:44,000 - yfinance - ERROR - Failed to get ticker 'AMZN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:44,046 - yfinance - ERROR - Failed to get ticker 'BRK-B' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:45,096 - yfinance - ERROR - Failed to get ticker 'CAT' reason: HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)
-2026-04-07 19:36:46,286 - yfinance - ERROR - Failed to get ticker 'GOOG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:46,292 - yfinance - ERROR - 
-50 Failed downloads:
-2026-04-07 19:36:46,292 - yfinance - ERROR - ['TXN', 'LIN', 'XOM', 'JPM', 'GOOGL', 'JNJ', 'BMY', 'ADBE', 'MRK', 'V', 'TSLA', 'NVDA', 'RTX', 'CSCO', 'DHR', 'ABBV', 'INTC', 'CVX', 'VZ', 'PEP', 'PG', 'WFC', 'AMGN', 'MS', 'AVGO', 'MA', 'HON', 'BAC', 'MCD', 'NKE', 'CRM', 'ABT', 'PFE', 'TMO', 'AAPL', 'HD', 'MSFT', 'UNH', 'UPS', 'COST', 'NEE', 'KO', 'META', 'DIS', 'LOW', 'PM', 'AMZN', 'BRK-B', 'CAT', 'GOOG']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:36:46,303 - data_ingestion.yfinance_client - WARNING - No data retrieved from API. Switching to synthetic market generation...
-2026-04-07 19:36:46,509 - data_ingestion.db_loader - INFO - Loading 65250 daily price records to database...
-2026-04-07 19:36:46,891 - data_ingestion.db_loader - INFO - Prices loaded.
-2026-04-07 19:36:46,892 - IndexForge - INFO - Targeting semi-annual rebalancing windows (MSCI Schedule)...
-2026-04-07 19:36:46,897 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-05-31...
-2026-04-07 19:36:46,900 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,902 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-11-30...
-2026-04-07 19:36:46,903 - index_math.rebalancing - WARNING - No price data found for 2019-11-30. Rebalance cannot proceed.
-2026-04-07 19:36:46,903 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-05-31...
-2026-04-07 19:36:46,904 - index_math.rebalancing - WARNING - No price data found for 2020-05-31. Rebalance cannot proceed.
-2026-04-07 19:36:46,904 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-11-30...
-2026-04-07 19:36:46,907 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,909 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-05-31...
-2026-04-07 19:36:46,912 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,914 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-11-30...
-2026-04-07 19:36:46,916 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,918 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-05-31...
-2026-04-07 19:36:46,921 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,923 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-11-30...
-2026-04-07 19:36:46,925 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,927 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-05-31...
-2026-04-07 19:36:46,930 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,932 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-11-30...
-2026-04-07 19:36:46,934 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:36:46,937 - index_math.construction - INFO - Starting daily index calculation for period: 2019-01-01 -> 2024-01-01
-2026-04-07 19:36:48,667 - index_math.construction - INFO - Daily calculation complete. 1197 index points recorded.
-2026-04-07 19:36:48,667 - IndexForge - INFO - Executing performance and risk attribution backtest...
-2026-04-07 19:36:48,668 - backtesting.performance - INFO - Fetching benchmark data for SPY...
-2026-04-07 19:36:49,395 - yfinance - ERROR - Failed to get ticker 'SPY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:36:49,398 - yfinance - ERROR - 
-1 Failed download:
-2026-04-07 19:36:49,398 - yfinance - ERROR - ['SPY']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:36:49,398 - backtesting.performance - WARNING - Could not fetch benchmark data. Generating synthetic SPY benchmark...
-2026-04-07 19:36:49,417 - backtesting.performance - INFO - Loaded 1197 points for custom index. Alignment with benchmark starting.
-2026-04-07 19:36:49,419 - backtesting.performance - WARNING - Merge failed. No overlapping dates between index (1197) and benchmark (1305).
-2026-04-07 19:36:49,419 - backtesting.performance - INFO - Sample Index Date Type: <class 'str'> Value: 2019-05-31
-2026-04-07 19:36:49,419 - backtesting.performance - INFO - Sample Bench Date Type: <class 'datetime.date'> Value: 2019-01-01
-2026-04-07 19:36:49,420 - backtesting.attribution - INFO - Calculating constituent turnover attribution...
-2026-04-07 19:36:49,434 - reports.generator - INFO - Generating executive summary report at indexforge_report.md...
-2026-04-07 19:36:49,440 - reports.generator - INFO - Report generation successful.
-2026-04-07 19:36:49,440 - IndexForge - INFO - Engineering cycle complete. Summary report generated.
-2026-04-07 19:37:11,214 - db.init_db - INFO - Initializing database schema...
-2026-04-07 19:37:11,217 - db.init_db - INFO - Database tables verified.
-2026-04-07 19:37:11,217 - IndexForge - INFO - Starting automated data ingestion...
-2026-04-07 19:37:11,217 - data_ingestion.db_loader - INFO - Clearing existing database records for fresh ingestion...
-2026-04-07 19:37:11,221 - data_ingestion.yfinance_client - INFO - Preparing metadata for 50 constituents...
-2026-04-07 19:37:11,238 - data_ingestion.db_loader - INFO - Loading 50 equities to database...
-2026-04-07 19:37:11,242 - data_ingestion.db_loader - INFO - Equities loaded.
-2026-04-07 19:37:11,242 - data_ingestion.yfinance_client - INFO - Downloading historical data for 50 symbols...
-2026-04-07 19:37:13,021 - yfinance - ERROR - Failed to get ticker 'PEP' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,029 - yfinance - ERROR - Failed to get ticker 'COST' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,044 - yfinance - ERROR - Failed to get ticker 'LIN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,047 - yfinance - ERROR - Failed to get ticker 'MS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,050 - yfinance - ERROR - Failed to get ticker 'PFE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,055 - yfinance - ERROR - Failed to get ticker 'MA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,068 - yfinance - ERROR - Failed to get ticker 'META' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,081 - yfinance - ERROR - Failed to get ticker 'GOOGL' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,713 - yfinance - ERROR - Failed to get ticker 'RTX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,716 - yfinance - ERROR - Failed to get ticker 'CSCO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,731 - yfinance - ERROR - Failed to get ticker 'JPM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,739 - yfinance - ERROR - Failed to get ticker 'ABBV' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,745 - yfinance - ERROR - Failed to get ticker 'INTC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,762 - yfinance - ERROR - Failed to get ticker 'KO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,767 - yfinance - ERROR - Failed to get ticker 'AMGN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:13,783 - yfinance - ERROR - Failed to get ticker 'NKE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,324 - yfinance - ERROR - Failed to get ticker 'HD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,330 - yfinance - ERROR - Failed to get ticker 'CRM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,343 - yfinance - ERROR - Failed to get ticker 'NVDA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,349 - yfinance - ERROR - Failed to get ticker 'BAC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,353 - yfinance - ERROR - Failed to get ticker 'LOW' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,367 - yfinance - ERROR - Failed to get ticker 'MRK' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,378 - yfinance - ERROR - Failed to get ticker 'HON' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,498 - yfinance - ERROR - Failed to get ticker 'PM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,938 - yfinance - ERROR - Failed to get ticker 'WFC' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,946 - yfinance - ERROR - Failed to get ticker 'ADBE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,961 - yfinance - ERROR - Failed to get ticker 'ABT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,963 - yfinance - ERROR - Failed to get ticker 'NEE' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,974 - yfinance - ERROR - Failed to get ticker 'TXN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:14,999 - yfinance - ERROR - Failed to get ticker 'AVGO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,000 - yfinance - ERROR - Failed to get ticker 'AMZN' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,497 - yfinance - ERROR - Failed to get ticker 'UNH' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,504 - yfinance - ERROR - Failed to get ticker 'CAT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,514 - yfinance - ERROR - Failed to get ticker 'MCD' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,520 - yfinance - ERROR - Failed to get ticker 'JNJ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,533 - yfinance - ERROR - Failed to get ticker 'DHR' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:15,536 - yfinance - ERROR - Failed to get ticker 'TMO' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,040 - yfinance - ERROR - Failed to get ticker 'TSLA' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,050 - yfinance - ERROR - Failed to get ticker 'MSFT' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,062 - yfinance - ERROR - Failed to get ticker 'V' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,069 - yfinance - ERROR - Failed to get ticker 'DIS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,081 - yfinance - ERROR - Failed to get ticker 'VZ' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,630 - yfinance - ERROR - Failed to get ticker 'UPS' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,636 - yfinance - ERROR - Failed to get ticker 'GOOG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:16,641 - yfinance - ERROR - Failed to get ticker 'BMY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:17,065 - yfinance - ERROR - Failed to get ticker 'CVX' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:17,210 - yfinance - ERROR - Failed to get ticker 'XOM' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:17,651 - yfinance - ERROR - Failed to get ticker 'PG' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:27,510 - yfinance - ERROR - Failed to get ticker 'AAPL' reason: HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)
-2026-04-07 19:37:27,512 - yfinance - ERROR - Failed to get ticker 'BRK-B' reason: HTTPSConnectionPool(host='query2.finance.yahoo.com', port=443): Read timed out. (read timeout=10)
-2026-04-07 19:37:27,517 - yfinance - ERROR - 
-50 Failed downloads:
-2026-04-07 19:37:27,517 - yfinance - ERROR - ['PEP', 'COST', 'LIN', 'MS', 'PFE', 'MA', 'META', 'GOOGL', 'RTX', 'CSCO', 'JPM', 'ABBV', 'INTC', 'KO', 'AMGN', 'NKE', 'HD', 'CRM', 'NVDA', 'BAC', 'LOW', 'MRK', 'HON', 'PM', 'WFC', 'ADBE', 'ABT', 'NEE', 'TXN', 'AVGO', 'AMZN', 'UNH', 'CAT', 'MCD', 'JNJ', 'DHR', 'TMO', 'TSLA', 'MSFT', 'V', 'DIS', 'VZ', 'UPS', 'GOOG', 'BMY', 'CVX', 'XOM', 'PG', 'AAPL', 'BRK-B']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:37:27,530 - data_ingestion.yfinance_client - WARNING - No data retrieved from API. Switching to synthetic market generation...
-2026-04-07 19:37:27,741 - data_ingestion.db_loader - INFO - Loading 65250 daily price records to database...
-2026-04-07 19:37:28,119 - data_ingestion.db_loader - INFO - Prices loaded.
-2026-04-07 19:37:28,120 - IndexForge - INFO - Targeting semi-annual rebalancing windows (MSCI Schedule)...
-2026-04-07 19:37:28,124 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-05-31...
-2026-04-07 19:37:28,128 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,131 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2019-11-30...
-2026-04-07 19:37:28,131 - index_math.rebalancing - WARNING - No price data found for 2019-11-30. Rebalance cannot proceed.
-2026-04-07 19:37:28,131 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-05-31...
-2026-04-07 19:37:28,132 - index_math.rebalancing - WARNING - No price data found for 2020-05-31. Rebalance cannot proceed.
-2026-04-07 19:37:28,132 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2020-11-30...
-2026-04-07 19:37:28,135 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,136 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-05-31...
-2026-04-07 19:37:28,139 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,141 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2021-11-30...
-2026-04-07 19:37:28,144 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,146 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-05-31...
-2026-04-07 19:37:28,148 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,150 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2022-11-30...
-2026-04-07 19:37:28,153 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,155 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-05-31...
-2026-04-07 19:37:28,157 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,159 - index_math.rebalancing - INFO - Executing rebalance evaluation for 2023-11-30...
-2026-04-07 19:37:28,162 - index_math.rebalancing - INFO - Rebalance finalized: 50 constituents selected.
-2026-04-07 19:37:28,164 - index_math.construction - INFO - Starting daily index calculation for period: 2019-01-01 -> 2024-01-01
-2026-04-07 19:37:29,889 - index_math.construction - INFO - Daily calculation complete. 1197 index points recorded.
-2026-04-07 19:37:29,889 - IndexForge - INFO - Executing performance and risk attribution backtest...
-2026-04-07 19:37:29,890 - backtesting.performance - INFO - Fetching benchmark data for SPY...
-2026-04-07 19:37:30,681 - yfinance - ERROR - Failed to get ticker 'SPY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:37:30,686 - yfinance - ERROR - 
-1 Failed download:
-2026-04-07 19:37:30,687 - yfinance - ERROR - ['SPY']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:37:30,687 - backtesting.performance - WARNING - Could not fetch benchmark data. Generating synthetic SPY benchmark...
-2026-04-07 19:37:30,713 - backtesting.performance - INFO - Loaded 1197 points for custom index. Alignment with benchmark starting.
-2026-04-07 19:37:30,717 - backtesting.performance - INFO - Performance analysis concluded. Index Sharpe: 2.32
-2026-04-07 19:37:30,717 - backtesting.attribution - INFO - Calculating constituent turnover attribution...
-2026-04-07 19:37:30,732 - reports.generator - INFO - Generating executive summary report at indexforge_report.md...
-2026-04-07 19:37:30,738 - reports.generator - INFO - Report generation successful.
-2026-04-07 19:37:30,738 - IndexForge - INFO - Engineering cycle complete. Summary report generated.
-2026-04-07 19:43:11,542 - IndexForge - INFO - Executing performance and risk attribution backtest...
-2026-04-07 19:43:11,549 - backtesting.performance - INFO - Fetching benchmark data for SPY...
-2026-04-07 19:43:12,673 - yfinance - ERROR - Failed to get ticker 'SPY' reason: Expecting value: line 1 column 1 (char 0)
-2026-04-07 19:43:12,680 - yfinance - ERROR - 
-1 Failed download:
-2026-04-07 19:43:12,680 - yfinance - ERROR - ['SPY']: Exception('%ticker%: No timezone found, symbol may be delisted')
-2026-04-07 19:43:12,680 - backtesting.performance - WARNING - Could not fetch benchmark data. Generating synthetic SPY benchmark...
-2026-04-07 19:43:12,717 - backtesting.performance - INFO - Loaded 1197 points for custom index. Alignment with benchmark starting.
-2026-04-07 19:43:12,724 - backtesting.performance - INFO - Performance analysis concluded. Index Sharpe: 2.32
-2026-04-07 19:43:12,724 - backtesting.visualizer - INFO - Generating performance visualization at assets/index_performance.png...
-2026-04-07 19:43:13,220 - backtesting.visualizer - INFO - Visualization saved successfully.
-2026-04-07 19:43:13,221 - IndexForge - INFO - Engineering cycle complete. Summary report generated.
+2026-04-07 19:51:23,753 - yfinance - ERROR - ['SPY']: Exception('%ticker%: No timezone found, symbol may be delisted')
+2026-04-07 19:51:23,753 - backtesting.performance - WARNING - Could not fetch benchmark data. Generating synthetic SPY benchmark...
+2026-04-07 19:51:23,767 - backtesting.performance - INFO - Loaded 1197 points for custom index. Alignment with benchmark starting.
+2026-04-07 19:51:23,769 - backtesting.performance - INFO - Performance analysis concluded. Index Sharpe: 2.66
+2026-04-07 19:51:23,769 - backtesting.attribution - INFO - Calculating constituent turnover attribution...
+2026-04-07 19:51:23,780 - reports.generator - INFO - Generating executive summary report at indexforge_report.md...
+2026-04-07 19:51:23,784 - reports.generator - INFO - Report generation successful.
+2026-04-07 19:51:23,784 - backtesting.visualizer - INFO - Generating performance visualization at assets/index_performance.png...
+2026-04-07 19:51:24,184 - backtesting.visualizer - INFO - Visualization saved successfully.
+2026-04-07 19:51:24,184 - IndexForge - INFO - Engineering cycle complete. Summary report generated.
