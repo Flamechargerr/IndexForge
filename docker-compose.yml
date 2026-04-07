@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: indexforge-db
+    environment:
+      POSTGRES_USER: indexuser
+      POSTGRES_PASSWORD: indexpassword
+      POSTGRES_DB: indexforge
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:
