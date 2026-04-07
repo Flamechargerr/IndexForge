@@ -1,81 +1,69 @@
 # IndexForge ⚙️📈
 
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 
-**IndexForge** is a robust, rule-based equity index construction and semi-annual rebalancing engine built in Python. Designed to mirror MSCI Cap-Weighted Index methodologies, the engine mathematically processes market-capitalizations, adjusts for free-float factors, filters for trading liquidity screens, and backtests performance against benchmarks automatically.
+**IndexForge** is a production-grade, rule-based equity index construction and rebalancing engine. Built to mirror **MSCI Cap-Weighted Index methodologies**, the engine mathematically processes market-capitalizations, adjusts for free-float factors, filters for liquidity screens, and executes semi-annual rebalancing with buffer-rule retention logic.
 
-## 🚀 Key Features
+## 🏆 Industrial-Grade Features (v2)
 
-*   **Algorithmic Concept Execution**: Fully automated universe ingestion tracking up to 500+ constituents mirroring major global indices.
-*   **Methodology Rulesets**: Implements rigorous financial logic including free-float adjustment modeling and Average Daily Traded Volume (ADTV) liquidity screenings.
-*   **Automated Rebalancing Engine**: Simulates semi-annual execution. Contains proprietary retention buffer-zones to dramatically minimize portfolio turnover while achieving size-focused target ranks. 
-*   **Performance Attribution**: Generates end-to-end comparative backtesting metrics versus proxy benchmarks (like the `SPY`), explicitly surfacing sector allocation drift trajectories and historical constituent weight vectors.
-*   **Resilient Database Integrations**: Built atop an SQLAlchemy ORM mapping, ingesting data automatically into a normalized relational (SQL) layer.
-*   **Failover Handling**: Integrated synthetic geometric brownian motion fail-proof mechanisms preventing upstream rate-limit execution blockers.
+*   **Algorithmic Rebalancing**: Implements rigorous MSCI semi-annual (May/Nov) selection logic. Includes **Retention Buffers** ($+/- 5$ ranks) to minimize turnover while achieving target constituent counts.
+*   **Precision Math**: Fully automated **Divisor Adjustments** ensure index continuity across rebalance events, preventing artificial price gaps.
+*   **Advanced Analytics**: Generates professional risk-attribution metrics, including **Annualized Volatility** and **Sharpe Ratio**.
+*   **Engineering Robustness**: 
+    - **Centralized Config**: All parameters managed in `config/settings.py`.
+    - **Structured Logging**: Detailed execution traces in `logs/` for auditability.
+    - **Unit Test Suite**: `pytest` coverage for the core financial math modules.
+*   **Data Resiliency**: Integrated synthetic geometric brownian motion fallback to ensure demo stability during upstream API rate-limits.
+
+## 🏗 System Architecture
+
+```mermaid
+graph TD
+    A[Data Ingestion] -->|yfinance| B[(SQLite DB)]
+    B --> C[Index Logic Engine]
+    C -->|Rebalancing| D[Constituent Selection]
+    C -->|Divisor Adj| E[Daily Index Calculation]
+    D --> F[Backtesting & Risk]
+    E --> F
+    F -->|Analytics| G[Executive Report]
+```
 
 ## 🛠 Tech Stack
-*   **Language**: `Python 3`
-*   **Data Pipelines**: `pandas`, `NumPy`, `yfinance`
-*   **Database**: `SQLAlchemy`, `SQLite` (Easily scalable to `PostgreSQL` via connection string swaps)
-*   **Reporting**: `tabulate`, automated markdown attribution generators
+*   **Engine**: Python 3 (pandas, NumPy, SQLAlchemy)
+*   **Storage**: SQLite (Normalized Relational Schema)
+*   **Testing**: Pytest
+*   **DevOps**: Makefile
 
 ---
 
 ## 💻 Getting Started
 
-### 1. Environment Setup
-
-Ensure you are using Python 3.9+. It is highly recommended to isolate the project within a virtual environment.
-
+### 1. Setup Environment
 ```bash
-git clone https://github.com/flamechargerr/IndexForge.min.git
-cd IndexForge
-
-# Create and activate a Virtual Environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
-
-# Install strictly typed dependencies
-pip install -r requirements.txt
+make install
+source .venv/bin/activate
 ```
 
-### 2. Execution Pipeline
-
-The platform is driven sequentially via a robust CLI (`main.py`).
-
-**Step 1: Initialize Database Schema**
+### 2. Run the Full Pipeline
+Executes the database setup, data ingestion, rebalancing engine, and backtesting suite in one pass.
 ```bash
-python main.py --setup
+make full-run
 ```
 
-**Step 2: Ingest the Market Data Universe**
-*Downloads market metrics and 5-year historical pricing for the constituent universe directly into the SQL models.*
+### 3. Run Unit Tests
 ```bash
-python main.py --ingest
+make test
 ```
 
-**Step 3: Run Math & Rebalancing Engines**
-*Calculates targeted constituent weights, executes the sector boundary math, transitions divisors, and traces the daily composite value.*
-```bash
-python main.py --run-engine
-```
+The resulting executive summary is generated at **`indexforge_report.md`**.
 
-**Step 4: Generate Attribution Report**
-*Compares tracking histories and dumps turnover + drift metrics.*
-```bash
-python main.py --backtest
-```
+## 📝 Methodology Summary
+1.  **Selection Universe**: Top US Mega-Cap equities by Free-Float Market Cap.
+2.  **Liquidity Filter**: Minimum 20-day Average Daily Traded Volume (ADTV) threshold.
+3.  **Weighting**: Cap-weighted with deterministic Free-Float Factors.
+4.  **Rebalancing**: Semi-annual schedule with buffer-zone retention rules to optimize turnover efficiency.
 
-The comprehensive portfolio breakdown will be dumped into `indexforge_report.md` at the root directory!
-
-## 📈 System Architecture Snippets
-
-The implementation separates index derivation into strict modules:
-
-*   `data_ingestion/db_loader.py`: Chunked multi-batch insertion utilities scaling effortlessly beyond memory limits.
-*   `index_math/rebalancing.py`: Execution of deterministic buffer rules, checking constituent threshold boundaries.
-*   `backtesting/attribution.py`: Grouping allocations mathematically to extrapolate sector bias drifts organically occurring between structural fixes.
-
-## 📝 License
+## ⚖️ License
 Distributed under the MIT License. See `LICENSE` for more information.

@@ -1,16 +1,16 @@
 import pandas as pd
 from sqlalchemy import text
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from db.connection import engine
+import logging
+
+logger = logging.getLogger(__name__)
 
 def calculate_turnover():
     """
     Calculates portfolio turnover at each rebalance date.
     Turnover = sum(abs(New Weight_i - Old Weight_i)) / 2
     """
+    logger.info("Calculating constituent turnover attribution...")
     query = text("""
         SELECT rebalance_date, ticker, weight 
         FROM index_constituents

@@ -3,18 +3,29 @@ from sqlalchemy import text
 from datetime import date
 import sys
 import os
+import logging
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from db.connection import engine
+from config.settings import INDEX_BASE_VALUE
 
-INDEX_BASE_VALUE = 1000.0
+logger = logging.getLogger(__name__)
+
+def calculate_adjusted_divisor(new_mcap, last_index_value):
+    """
+    Calculates a new divisor during rebalancing to ensure index continuity.
+    Formula: New Divisor = New Market Cap / Last Index Value
+    """
+    if last_index_value == 0:
+        return 0
+    return new_mcap / last_index_value
 
 def calculate_daily_index(start_date: date, end_date: date):
     """
     Calculates the daily index value between start_date and end_date.
-    Manages the index divisor across rebalances.
+    Manages the index divisor across rebalances using MSCI-standard continuity rules.
     """
-    print(f"Calculating index values from {start_date} to {end_date}...")
+    logger.info(f"Starting daily index calculation for period: {start_date} -> {end_date}")
     
     # Get all trading days in the range
     query_dates = text("""
@@ -25,7 +36,7 @@ def calculate_daily_index(start_date: date, end_date: date):
     dates_df = pd.read_sql(query_dates, engine, params={"s_date": start_date, "e_date": end_date})
     
     if dates_df.empty:
-        print("No trading days found in range.")
+        logger.warning("No trading days identified in the requested range.")
         return
         
     trading_days = dates_df['date'].tolist()
@@ -55,18 +66,20 @@ def calculate_daily_index(start_date: date, end_date: date):
         current_rebalance_date = const_df['rebalance_date'].iloc[0]
         
         # Get prices for these constituents on t_date
-        tickers = tuple(const_df['ticker'].tolist())
-        if len(tickers) == 1:
-            tickers_str = f"('{tickers[0]}')"
-        else:
-            tickers_str = str(tickers)
+        tickers = list(const_df['ticker'].tolist())
+        # SQLite doesn't support 'ticker IN :tickers' with a tuple in raw text() easily.
+        # We'll use a safer formatted string approach for the IN clause.
+        placeholders = ', '.join([':t' + str(i) for i in range(len(tickers))])
+        params = {"t_date": t_date}
+        for i, t in enumerate(tickers):
+            params['t' + str(i)] = t
             
         query_prices = text(f"""
             SELECT ticker, close_price 
             FROM daily_prices 
-            WHERE date = :t_date AND ticker IN {tickers_str}
+            WHERE date = :t_date AND ticker IN ({placeholders})
         """)
-        prices_df = pd.read_sql(query_prices, engine, params={"t_date": t_date})
+        prices_df = pd.read_sql(query_prices, engine, params=params)
         
         # Merge prices with constituents
         merged = pd.merge(const_df, prices_df, on='ticker', how='inner')
@@ -81,12 +94,11 @@ def calculate_daily_index(start_date: date, end_date: date):
             current_divisor = current_mcap / INDEX_BASE_VALUE
             index_value = INDEX_BASE_VALUE
         elif current_rebalance_date != last_rebalance_date:
-            # Rebalance has occurred! We must adjust the divisor to prevent artificial discontinuous jumps.
-            # Divisor = New Market Cap / Index Value Yesterday
-            current_divisor = current_mcap / last_index_value
+            # Rebalance Event: Adjust divisor to prevent artificial jump
+            current_divisor = calculate_adjusted_divisor(current_mcap, last_index_value)
             index_value = current_mcap / current_divisor
         else:
-            # Normal day
+            # Standard trading day
             index_value = current_mcap / current_divisor
             
         last_index_value = index_value
@@ -101,9 +113,7 @@ def calculate_daily_index(start_date: date, end_date: date):
         
     if index_values_records:
         iv_df = pd.DataFrame(index_values_records)
-        # Using ON CONFLICT logic or 'replace' could be complex here without raw sql.
-        # Since it's a demo flow, we just clean up and insert.
         with engine.begin() as conn:
             conn.execute(text("DELETE FROM index_values WHERE date >= :s AND date <= :e"), {"s": start_date, "e": end_date})
         iv_df.to_sql('index_values', engine, if_exists='append', index=False)
-        print(f"Calculated {len(iv_df)} daily index values.")
+        logger.info(f"Daily calculation complete. {len(iv_df)} index points recorded.")
