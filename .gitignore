@@ -34,3 +34,7 @@ ENV/
 
 # Output reports
 indexforge_report.md
+
+# Test and coverage outputs
+.coverage
+.pytest_cache/
