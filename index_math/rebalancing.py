@@ -5,6 +5,7 @@ import sys
 import os
 import numpy as np
 import logging
+import hashlib
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from db.connection import engine
@@ -14,7 +15,8 @@ logger = logging.getLogger(__name__)
 
 # Mock free-float factor generator for demonstration (real MSCI uses proprietary research)
 def get_mock_free_float(ticker):
-    np.random.seed(hash(ticker) % (2**32))
+    seed = int(hashlib.sha256(ticker.encode("utf-8")).hexdigest()[:8], 16)
+    np.random.seed(seed)
     return np.random.uniform(0.70, 1.0)
 
 def calculate_rebalance(rebalance_date: date):
