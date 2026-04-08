@@ -1,6 +1,10 @@
 import datetime as dt
+import os
+import sys
 
 import pandas as pd
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backtesting import attribution, performance, visualizer
 from index_math import rebalancing
