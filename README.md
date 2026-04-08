@@ -67,6 +67,13 @@ Executes the database setup, data ingestion, rebalancing engine, and backtesting
 make full-run
 ```
 
+#### Smoke Run Checklist (Demo-Ready)
+After `make full-run`, verify these artifacts exist:
+- `indexforge.db` (local SQLite dataset + index outputs)
+- `indexforge_report.md` (executive summary report)
+- `assets/index_performance.png` (presentation chart image)
+- `logs/` (runtime execution logs)
+
 ### 3. Run Unit Tests
 ```bash
 make test

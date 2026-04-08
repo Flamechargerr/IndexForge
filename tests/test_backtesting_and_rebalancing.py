@@ -91,3 +91,67 @@ def test_plot_performance_creates_image(tmp_path):
     visualizer.plot_performance(perf_df, str(output))
 
     assert output.exists()
+
+
+def test_calculate_rebalance_returns_empty_when_liquidity_filter_excludes_all(monkeypatch):
+    universe_df = pd.DataFrame(
+        {
+            "ticker": ["AAA", "BBB"],
+            "shares_outstanding": [100, 200],
+            "close_price": [10.0, 20.0],
+            "adtv_20d": [1000, 2000],
+        }
+    )
+
+    def fake_read_sql(query, *_args, **_kwargs):
+        sql = str(query)
+        if "FROM equities e" in sql:
+            return universe_df.copy()
+        if "SELECT ticker FROM index_constituents" in sql:
+            return pd.DataFrame({"ticker": []})
+        raise AssertionError(f"Unexpected query: {sql}")
+
+    monkeypatch.setattr(rebalancing.pd, "read_sql", fake_read_sql)
+    monkeypatch.setattr(rebalancing, "get_mock_free_float", lambda _ticker: 1.0)
+
+    result = rebalancing.calculate_rebalance(dt.date(2024, 5, 31))
+
+    assert result.empty
+    assert list(result.columns) == [
+        "ticker",
+        "rebalance_date",
+        "weight",
+        "shares_in_index",
+        "free_float_factor",
+    ]
+
+
+def test_calculate_rebalance_retains_constituent_on_upper_buffer_boundary(monkeypatch):
+    universe_df = pd.DataFrame(
+        {
+            "ticker": ["AAA", "BBB", "CCC", "DDD", "EEE"],
+            "shares_outstanding": [100, 100, 100, 100, 100],
+            "close_price": [100.0, 90.0, 80.0, 70.0, 60.0],
+            "adtv_20d": [1_000_000, 1_000_000, 1_000_000, 1_000_000, 1_000_000],
+        }
+    )
+
+    def fake_read_sql(query, *_args, **_kwargs):
+        sql = str(query)
+        if "FROM equities e" in sql:
+            return universe_df.copy()
+        if "SELECT ticker FROM index_constituents" in sql:
+            return pd.DataFrame({"ticker": ["DDD"]})
+        raise AssertionError(f"Unexpected query: {sql}")
+
+    monkeypatch.setattr(rebalancing.pd, "read_sql", fake_read_sql)
+    monkeypatch.setattr(rebalancing, "get_mock_free_float", lambda _ticker: 1.0)
+    monkeypatch.setattr(rebalancing, "TARGET_CONSTITUENTS", 3)
+    monkeypatch.setattr(rebalancing, "BUFFER_ZONE", 1)
+
+    result = rebalancing.calculate_rebalance(dt.date(2024, 5, 31))
+    selected = set(result["ticker"].tolist())
+
+    assert selected == {"AAA", "BBB", "DDD"}
+    assert "CCC" not in selected
+    assert round(result["weight"].sum(), 10) == 1.0
