@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 # Mock free-float factor generator for demonstration (real MSCI uses proprietary research)
 def get_mock_free_float(ticker):
-    seed = int(hashlib.sha256(ticker.encode("utf-8")).hexdigest()[:8], 16)
+    seed = int(hashlib.sha256(ticker.encode("utf-8")).hexdigest(), 16) % (2**32)
     np.random.seed(seed)
     return np.random.uniform(0.70, 1.0)
 
